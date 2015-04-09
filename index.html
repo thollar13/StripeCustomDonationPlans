@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Stripe Testing</title>
+   
+    <!-- Basic Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- JavaScript Files -->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+
+  </head>
+  <body>
+    <h3>This is purposely built to keep only the necessary items needed. Therefore, the styling is left to your discretion.</h3>
+    <h4>Steps for setup</h4>
+    <ol>
+      <li>Setup stripe and receive custom keys <a href="https://dashboard.stripe.com/account/apikeys" target="_blank">your custom keys</a></li>
+      <li>Insert "publishable" test key where "setPublishableKey" is set on script.js page</li>
+      <li>Insert "publishable" and "secret" keys in the config.php file</li>
+      <li>In your js/script.js - make sure that "http://stripe.dev" in $('#payment-form').attr('action', 'http://stripe.dev/plans/'+amount+'charge.php'); is pointing to your correct domain</li>
+    </ol>
+    <p>Note: in order for plans to work, you must setup a plan in Stripe otherwise you will get an error.</p>
+    <div class="custom-wrap">
+      <h3>Custom Donation</h3>
+      <span class="erroramount"></span><br/>
+      <input type="text" class="custom-amount" />
+      <input type="button" class="customoption" value="Donate" />
+    </div>
+
+    <div class="monthly-wrap">
+      <h3>Monthly Donation</h3>
+      <select class="monthly-amount">
+        <option value="25">$25 month</option>
+        <option value="50">$50 month</option>
+        <option value="75">$75 month</option>
+        <option value="100">$100 month</option>
+        <option value="150">$150 month</option>
+        <option value="250">$250 month</option>
+      </select> 
+      <input type="button" class="monthlyoption" value="Donate" />
+    </div>
+  
+
+    <div class="donation-wrap">
+      <div class="donation-inner">
+        <div class="close-donation-popup">x</div>
+        <span class="payment-errors"><?= $error ?></span>
+        <span class="payment-success"><?= $success ?></span>
+        <form action="" method="POST" id="payment-form">
+          <div class="form-row">
+              <label>Card Number</label>
+              <input type="text" size="20" autocomplete="off" class="card-number" />
+          </div>
+          <div class="form-row">
+              <label>CVC</label>
+              <input type="text" size="4" autocomplete="off" class="card-cvc" />
+          </div>
+          <div class="form-row">
+              <label>Expiration (MM/YYYY)</label>
+              <input type="text" size="2" class="card-expiry-month"/>
+              <span> / </span>
+              <input type="text" size="4" class="card-expiry-year"/>
+          </div>
+          <div class="form-row">
+              <label>Amount ($)</label>
+              <input type="text" name="amount" size="2" class="payment-amount"/>
+          </div>
+          <button type="submit" class="submit-button">Submit Donation</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
