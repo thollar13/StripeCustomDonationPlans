@@ -17,7 +17,7 @@
     <h3>This is purposely built to keep only the necessary items needed. Therefore, the styling is left to your discretion.</h3>
     <h4>Steps for setup</h4>
     <ol>
-      <li>Setup stripe and receive custom keys <a href="https://dashboard.stripe.com/account/apikeys" target="_blank">your custom keys</a></li>
+      <li>Setup <a href="https://stripe.com/" target="_blank">Stripe</a> and receive <a href="https://dashboard.stripe.com/account/apikeys" target="_blank">your custom keys</a></li>
       <li>Insert "publishable" test key where "setPublishableKey" is set on script.js page</li>
       <li>Insert "publishable" and "secret" keys in the config.php file</li>
       <li>In your js/script.js - make sure that "http://stripe.dev" in $('#payment-form').attr('action', 'http://stripe.dev/plans/'+amount+'charge.php'); is pointing to your correct domain</li>
