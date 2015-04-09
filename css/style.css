@@ -1,7 +1,10 @@
 body {
-	
+	font-size: 1.05em;
+	font-family: sans-serif;
 }
-
+li {
+	margin: 10px 0px;
+}
 .donation-wrap {
 	display: none;
 }

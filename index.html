@@ -15,14 +15,14 @@
   </head>
   <body>
     <h3>This is purposely built to keep only the necessary items needed. Therefore, the styling is left to your discretion.</h3>
-    <h4>Steps for setup</h4>
+    <h4>Steps for Setup</h4>
     <ol>
       <li>Setup <a href="https://stripe.com/" target="_blank">Stripe</a> and receive <a href="https://dashboard.stripe.com/account/apikeys" target="_blank">your custom keys</a></li>
-      <li>Insert "publishable" test key where "setPublishableKey" is set on script.js page</li>
-      <li>Insert "publishable" and "secret" keys in the config.php file</li>
-      <li>In your js/script.js - make sure that "http://stripe.dev" in $('#payment-form').attr('action', 'http://stripe.dev/plans/'+amount+'charge.php'); is pointing to your correct domain</li>
+      <li>Insert <b>publishable</b> test key where <b>setPublishableKey</b> is set on <b>script.js</b> page</li>
+      <li>Insert <b>publishable</b> and <b>secret</b> keys in the config.php file</li>
+      <li>In your js/script.js - make sure that <b>http://stripe.dev</b> in <b>$('#payment-form').attr('action', 'http://stripe.dev/plans/'+amount+'charge.php');</b> is pointing to your correct domain</li>
     </ol>
-    <p>Note: in order for plans to work, you must setup a plan in Stripe otherwise you will get an error.</p>
+
     <div class="custom-wrap">
       <h3>Custom Donation</h3>
       <span class="erroramount"></span><br/>
@@ -32,6 +32,7 @@
 
     <div class="monthly-wrap">
       <h3>Monthly Donation</h3>
+      <p>Note: in order for plans to work, you must setup a plan in Stripe otherwise you will get an error. Be sure to grab the plan ID and insert it into the corresponding charge.php file.</p>
       <select class="monthly-amount">
         <option value="25">$25 month</option>
         <option value="50">$50 month</option>
